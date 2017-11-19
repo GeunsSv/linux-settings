@@ -1,0 +1,38 @@
+" make sure not to use vi compatibility mode
+set nocompatible
+
+" enable syntax highlighting
+syntax enable
+" set number
+set number 
+set relativenumber
+
+" set scrolloff
+set scrolloff=8
+
+" set hidden
+set hidden
+
+" set search options
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+
+" show commands as you type them
+set showcmd
+
+" Tab options
+set expandtab
+set shiftwidth=8
+set tabstop=8
+set softtabstop=8
+
+" set stricterfor c programming
+set cindent
+set autoindent
+set smartindent
+
+colorscheme desert
+
+map <F10>:%!astyle --style=kr --indent=spaces=8 --indent-switches --indent-classes --pad-oper --pad-header --unpad-paren --convert-tabs <CR>
