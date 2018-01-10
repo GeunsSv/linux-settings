@@ -16,7 +16,7 @@ then
                 sudo tee /etc/apt/sources.list.d/spotify.list
 
         sudo apt-get update && sudo apt-get -y upgrade
-        sudo apt install -y wmctrl terminator thunderbird spotify-client
+        sudo apt install -y wmctrl terminator thunderbird spotify-client sl
 
         mkdir ~/.config/autostart/
 

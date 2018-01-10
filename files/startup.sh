@@ -10,6 +10,6 @@ firefox &
 sleep 2
 wmctrl -s 2
 thunderbird &
-sleep 5
+sleep 4
 wmctrl -s 3
 spotify &
