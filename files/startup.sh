@@ -6,7 +6,7 @@ firefox &
 thunderbird &
 spotify &
 
-sleep 5
+sleep 10
 
 wmctrl -r "terminator" -t 0
 wmctrl -r "firefox" -t 1
