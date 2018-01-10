@@ -2,3 +2,4 @@
 
 alias gcc='gcc -Werror -Wall -Wextra'
 alias restart='sudo reboot now'
+alias stop='sudo shutdown now'
