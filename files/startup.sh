@@ -1,14 +1,15 @@
 #!/bin/bash
 
-#2. Launch programs in these terminals
+wmctrl -n 5
+
+wmctrl -s 0
 terminator --maximise --borderless &
+sleep 1
+wmctrl -s 1
 firefox &
+sleep 2
+wmctrl -s 2
 thunderbird &
+sleep 5
+wmctrl -s 3
 spotify &
-
-sleep 10
-
-wmctrl -r "terminator" -t 0
-wmctrl -r "firefox" -t 1
-wmctrl -r "thunderbird" -t 2
-wmctrl -r "spotify" -t 3
