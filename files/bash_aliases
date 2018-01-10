@@ -1,3 +1,4 @@
 # Aliases for bash
 
 alias gcc='gcc -Werror -Wall -Wextra'
+alias restart='sudo reboot now'
