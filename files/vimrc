@@ -33,6 +33,7 @@ set cindent
 set autoindent
 set smartindent
 
-colorscheme desert
+colorscheme ron
 
 map <F10>:%!astyle --style=kr --indent=spaces=8 --indent-switches --indent-classes --pad-oper --pad-header --unpad-paren --convert-tabs <CR>
+:map <F9> :setlocal spell! spelllang=en_us<CR>
