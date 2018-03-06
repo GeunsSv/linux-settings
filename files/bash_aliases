@@ -1,5 +1,6 @@
 # Aliases for bash
 
 alias gcc='gcc -Werror -Wall -Wextra'
-alias restart='sudo reboot now'
-alias stop='sudo shutdown now'
+alias reboot='~/scripts/close_all_windows.sh && reboot'
+alias shutdown='~/scripts/close_all_windows.sh && sudo shutdown now'
+alias logoff='~/scripts/close_all_windows.sh && gnome-session-quit'

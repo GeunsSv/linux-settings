@@ -1,12 +1,20 @@
 #!/bin/bash
 
+# prepare neccesary data and directory
+if [[ ! -d ~/scripts/logs ]]; then
+        mkdir ~/scripts/logs
+fi
+exec > ~/scripts/logs/degug-linux-settings.log 2>&1
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# changes for git repositories
 if [ "$1" == "git" ]
 then
         echo "[alias]" >> $2/.git/config
         echo "        wip = log --abbrev-commit --oneline --graph --decorate" >> $2/.git/config
 fi
 
+# custumize linux to my personal taste
 if [ "$1" == "linux" ]
 then
         # Insert neccesary info for spotify-client
@@ -23,12 +31,15 @@ then
         sudo apt-get update
         sudo apt install -y docker-ce
 
-        mkdir ~/.config/autostart/
+        if [[ ! -d ~/.config/autostart ]]; then
+                mkdir ~/.config/autostart/
+        fi
 
-        cp ./files/bash_aliases ~/.bash_aliases
-        cp ./files/vimrc ~/.vimrc
-        cp ./files/startup.sh ~/
-        cp ./files/sh.desktop ~/.config/autostart/
+        cp $DIR/files/bash_aliases ~/.bash_aliases
+        cp $DIR/files/vimrc ~/.vimrc
+        cp $DIR/files/startup.sh ~/scripts/
+        cp $DIR/files/close_all_windows.sh ~/scripts/
+        cp $DIR/files/sh.desktop ~/.config/autostart/
 
         . ~/.bashrc
 fi

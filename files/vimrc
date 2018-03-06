@@ -33,6 +33,11 @@ set cindent
 set autoindent
 set smartindent
 
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 colorscheme ron
 
 map <F10>:%!astyle --style=kr --indent=spaces=8 --indent-switches --indent-classes --pad-oper --pad-header --unpad-paren --convert-tabs <CR>
