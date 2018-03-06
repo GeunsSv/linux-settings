@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if [[ ! -d ~/scripts/logs ]]; then
-        mkdir ~/scripts/logs
+if [[ ! -d $HOME/scripts/logs ]]; then
+        mkdir $HOME/scripts/logs
 fi
-exec > ~/scripts/logs/debug-startup.log 2>&1
+exec > $HOME/scripts/logs/startup.log 2>&1
 
 wmctrl -s 0
 terminator -m -b -l my-layout &
