@@ -17,7 +17,7 @@ echo deb http://repository.spotify.com stable non-free | \
 
 ## Update and upgrade, install programs
 sudo apt-get update && sudo apt-get -y upgrade
-sudo apt install -y wmctrl terminator thunderbird spotify-client sl
+sudo apt install -y wmctrl terminator thunderbird spotify-client sl flashplugin-installer
 sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
 
 ## Add docker info to repositories and install it
