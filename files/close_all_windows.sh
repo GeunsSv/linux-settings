@@ -1,9 +1,10 @@
 #!/bin/bash
 
-if [[ ! -d ! $HOME/scripts/logs ]]; then
+if [[ ! -d $HOME/scripts/logs ]]; then
         mkdir $HOME/scripts/logs
 fi
-exec > $HOME/scripts/logs/debug-close-all-windows.log 2>&1
+exec > $HOME/scripts/logs/close-all-windows.log 2>&1
+echo "This log file should be empty!" > $HOME/scripts/logs/close-all-windows.log
 
 # close all open windows gracefully without closing the Desktop environment
 WIN_IDs=$(wmctrl -l | grep -vwE "Desktop$|xfce4-panel$" | cut -f1 -d' ')

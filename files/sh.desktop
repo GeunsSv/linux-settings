@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=sh -c /home/sgeuns/startup.sh >> /home/sgeuns/Desktop/out.txt 2>&1
+Exec=sh -c /home/sgeuns/scripts/startup.sh >> /home/sgeuns/Desktop/out.txt 2>&1
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true

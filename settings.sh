@@ -6,6 +6,9 @@ set -x
 if [[ ! -d $HOME/scripts/logs ]]; then
         mkdir $HOME/scripts/logs
 fi
+if [[ -f $HOME/scripts/logs/settings.log ]]; then
+        rm $HOME/scripts/logs/settings.log
+fi
 exec &> >(tee -a "$HOME/scripts/logs/settings.log")
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
@@ -43,8 +46,8 @@ docker build -t firefox $DIR/files/firefox/
 docker run -ti -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/.Xauthority:/home/developer/.Xauthority --net=host --pid=host --ipc=host firefox
 
 ## Copy all files
-cp $DIR/files/bash_aliases $HOME/bash_aliases
-cp $DIR/files/vimrc $HOME/vimrc
+cp $DIR/files/bash_aliases $HOME/.bash_aliases
+cp $DIR/files/vimrc $HOME/.vimrc
 cp $DIR/files/startup.sh $HOME/scripts/
 cp $DIR/files/close_all_windows.sh $HOME/scripts/
 cp $DIR/files/sh.desktop $HOME/.config/autostart/
