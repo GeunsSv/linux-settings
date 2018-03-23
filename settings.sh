@@ -39,11 +39,14 @@ fi
 # complete the firefox Dockerfile
 $DIR/files/complete-firefox-dockerfile.sh $DIR
 
+sudo usermod -aG docker $USER
+sudo service docker restart
+
 # build the firefox image
 docker build -t firefox $DIR/files/firefox/
 
 # create the firefox container
-docker run -ti -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/.Xauthority:/home/developer/.Xauthority --net=host --pid=host --ipc=host firefox
+docker run --name firefox -tid -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/.Xauthority:/home/developer/.Xauthority --net=host --pid=host --ipc=host firefox
 
 ## Copy all files
 cp $DIR/files/bash_aliases $HOME/.bash_aliases
