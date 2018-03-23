@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 # prepare neccesary data and directory
 if [[ ! -d $HOME/scripts/logs ]]; then
         mkdir $HOME/scripts/logs
@@ -31,6 +33,15 @@ if [[ ! -d $HOME/.config/autostart ]]; then
         mkdir $HOME/.config/autostart/
 fi
 
+# complete the firefox Dockerfile
+$DIR/files/complete-firefox-dockerfile.sh $DIR
+
+# build the firefox image
+docker build -t firefox $DIR/files/firefox/
+
+# create the firefox container
+docker run -ti -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/.Xauthority:/home/developer/.Xauthority --net=host --pid=host --ipc=host firefox
+
 ## Copy all files
 cp $DIR/files/bash_aliases $HOME/bash_aliases
 cp $DIR/files/vimrc $HOME/vimrc
@@ -40,3 +51,5 @@ cp $DIR/files/sh.desktop $HOME/.config/autostart/
 cp $DIR/files/terminator.config $HOME/.config/terminator/config
 
 . $HOME/.bashrc
+
+set +x

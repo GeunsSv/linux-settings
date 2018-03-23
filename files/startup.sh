@@ -9,7 +9,7 @@ wmctrl -s 0
 terminator -m -b -l my-layout &
 sleep 1
 wmctrl -s 1
-firefox &
+docker start firefox
 sleep 2
 wmctrl -s 2
 thunderbird &
