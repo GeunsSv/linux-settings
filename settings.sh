@@ -4,7 +4,7 @@ set -x
 
 # prepare neccesary data and directory
 if [[ ! -d $HOME/scripts/logs ]]; then
-        mkdir $HOME/scripts/logs
+        mkdir -p $HOME/scripts/logs
 fi
 if [[ -f $HOME/scripts/logs/settings.log ]]; then
         rm $HOME/scripts/logs/settings.log
