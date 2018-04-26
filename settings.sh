@@ -33,7 +33,10 @@ sudo apt install -y docker-ce
 
 ## Make sure the autostart folder exists for the startup script
 if [[ ! -d $HOME/.config/autostart ]]; then
-        mkdir $HOME/.config/autostart/
+        -p mkdir $HOME/.config/autostart/
+fi
+if [[ ! -d $HOME/.config/terminator ]]; then
+        mkdir -p $HOME/.config/terminator/
 fi
 
 # complete the firefox Dockerfile
