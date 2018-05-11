@@ -51,6 +51,9 @@ fi
 # create the firefox container
 # docker run --name firefox -tid -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/.Xauthority:/home/developer/.Xauthority --net=host --pid=host --ipc=host firefox
 
+# Install Vundle for managing vim plugins!
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 ## Copy all files
 cp $DIR/files/bash_aliases $HOME/.bash_aliases
 cp $DIR/files/vimrc $HOME/.vimrc
