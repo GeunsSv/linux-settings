@@ -1,5 +1,22 @@
 " make sure not to use vi compatibility mode
 set nocompatible
+filetype off
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required. Install in vim running :PluginInstall 
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tpope/vim-surround'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'itchyny/lightline.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()
+filetype plugin indent on
+
 
 " enable syntax highlighting
 syntax enable
