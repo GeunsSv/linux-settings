@@ -5,3 +5,6 @@ alias reboot='~/scripts/close_all_windows.sh && reboot'
 alias shutdown='~/scripts/close_all_windows.sh && sudo shutdown now'
 alias logoff='~/scripts/close_all_windows.sh && gnome-session-quit'
 alias glo='git log --oneline --graph --decorate --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
+
+# make sure vim plugins can use 256 color
+export TERM=xterm-256color
