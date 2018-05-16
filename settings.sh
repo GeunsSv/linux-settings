@@ -33,7 +33,7 @@ sudo apt install -y docker-ce
 
 ## Make sure the autostart folder exists for the startup script
 if [[ ! -d $HOME/.config/autostart ]]; then
-        -p mkdir $HOME/.config/autostart/
+        mkdir -p $HOME/.config/autostart/
 fi
 if [[ ! -d $HOME/.config/terminator ]]; then
         mkdir -p $HOME/.config/terminator/
@@ -52,6 +52,7 @@ fi
 # docker run --name firefox -tid -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/.Xauthority:/home/developer/.Xauthority --net=host --pid=host --ipc=host firefox
 
 ## Copy all files
+cp $DIR/files/bashrc $HOME/.bashrc
 cp $DIR/files/bash_aliases $HOME/.bash_aliases
 cp $DIR/files/vimrc $HOME/.vimrc
 cp $DIR/files/startup.sh $HOME/scripts/
