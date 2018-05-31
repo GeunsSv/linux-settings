@@ -22,6 +22,8 @@ syntax enable
 " set number
 set number 
 set relativenumber
+" add mouse support (also avoids copying linenumbers)
+set mouse=a
 
 " set scrolloff
 set scrolloff=8
